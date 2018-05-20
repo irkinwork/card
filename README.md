@@ -1,1 +1,0 @@
-# chulakov-card

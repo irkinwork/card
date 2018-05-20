@@ -1,0 +1,419 @@
+/*----------- Шрифты  (START)-----------*/
+
+@font-face
+	font-family 'FontAwesome';
+	src url('../fonts/fa/fontawesome-webfont.eot?v=4.7.0')
+	src url('../fonts/fa/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fa/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fa/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fa/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fa/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg')
+	font-weight normal
+	font-style normal
+
+@font-face
+	font-family 'OS-bold'
+	src url('../fonts/os-bold/OpenSansBold.eot')
+	src url('../fonts/os-bold/OpenSansBold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/os-bold/OpenSansBold.woff') format('woff'),
+		 url('../fonts/os-bold/OpenSansBold.ttf') format('truetype')
+	font-weight normal
+	font-style normal
+
+$fa = 'FontAwesome'
+
+$font1 = 'Arial', sans-serif
+$font2 = 'OS-bold'
+
+/*----------- Шрифты  (END)-----------*/
+
+/*-----------  Цвета  (START)-----------*/
+
+$blue = #00aeef // синий
+$green = #a0c600 // зеленый 
+
+
+/*----------- Цвета  (end)-----------*/
+
+/*----------- Вспомогательные функции  (START)-----------*/
+
+fs(x)
+	font-size x
+
+lh(x)
+	line-height x
+radius(x)
+	border-radius x
+bold()
+	font-weight bold
+normal()
+	font-weight normal
+ff(x)
+	font-family x
+h(x)
+	height x
+w(x)
+	width x
+b(x)
+	background x
+hlh(x)
+	h(x)
+	lh(x)
+sq(x)
+	w(x)
+	h(x)
+c(x)
+	color x
+flex()
+	display flex
+centerflex()
+	display flex
+	justify-content center
+	align-items center
+.center
+	text-align center
+.bold
+	ff($font2)
+cropTop()
+	object-fit cover
+	object-position center
+/*----------- Вспомогательные функции (End)-----------*/
+
+/*----------- основные элементы (start)-----------*/
+*
+	box-sizing: border-box
+button,
+input,
+textarea,
+select
+	outline none !important
+	box-shadow: none !important
+
+button
+	border none !important
+	cursor pointer
+
+::-webkit-input-placeholder
+	color #bec6cf
+::-moz-placeholder
+	color #bec6cf
+:-ms-input-placeholder
+	color #bec6cf
+:-moz-placeholder
+	color #bec6cf
+
+input
+	border 1px solid #e5eaef
+	&[type=number]
+		-moz-appearance:textfield
+		-webkit-appearance none
+		&::-webkit-inner-spin-button, 
+		&::-webkit-outer-spin-button
+			-webkit-appearance none
+			margin 0
+	&::-ms-clear
+		display none
+
+html,body
+	overflow-x hidden
+body
+	b(#101114)
+	c(#fff)
+	fs(16px)
+	ff($font1)
+	display: flex;
+	justify-content: center;
+	font-weight normal
+p
+	margin 0
+	sq(fit-content)
+.no-p
+	padding 0
+img
+	width: auto
+	max-width: 100%
+img
+	cropTop()
+a, a:visited
+	color inherit
+	text-decoration none
+	&:hover, &:active
+		text-decoration none
+.fright
+	float right
+h1, h2
+	ff($font2)
+
+h1
+	fs(35px)
+	margin  0 0 13px
+
+h2
+	fs(22px)
+	c(#383d43)
+	margin 0 0 28px
+h3
+	fs(14px)
+	margin  0 0 0
+	lh(20px)
+p
+	fs(16px)
+.wrapper
+	display flex
+	max-width 960px
+
+/**********************left block start*************************/
+
+.left
+	b(#1f2229)
+	
+.logo
+	h(163px)
+	w(322px)
+	display flex
+	align-items: center
+	padding 0 0 0 30px
+.menu
+	&__item
+		hlh(76px)
+		ff($font2)
+		fs(18px)
+		display block
+		padding 0 0 0 30px
+		c(#fff)
+		&:active
+			b(#2a2d37)
+			c(#808592)
+		&:hover
+			c(#808592)
+			b(#191c24)
+.hamburger
+	display none
+/**********************left block end*************************/
+
+/**********************right block start*************************/
+
+/**********************header start*************************/
+.right
+	b(#f7f8f8)
+	&__header
+		padding: 40px 30px 35px
+		b($blue)
+		//h(163px)
+		c(#193945)
+	&__content
+		c(#535864)
+		padding: 40px 30px 50px
+/**********************header end*************************/
+/**********************content start*************************/
+.content
+	&__p
+		c(#a3afc0)
+		margin 0 0 23px
+	&__table
+		display table
+		margin 0 0 35px
+	&__tr
+		display table-row
+	&__td
+		c(#a3afc0)
+		padding 8px 0
+		display table-cell
+		&:first-child
+			w(158px)
+		&:last-child
+			c(#535864)
+
+
+/**********************card start*************************/
+.card
+	w(350px)
+	h(236px)
+	border 1px solid #e4e9ee
+	radius(10px)
+	b(#f7f8f8)
+	&__field
+		border 1px solid #e4e9ee
+		&:focus
+			border-color $green
+		// &:hover
+		// 	border 1px solid $blue
+		&.invalid
+			border-color red
+
+
+	&__wrapper
+		display flex
+		position relative
+	&_front
+		position: static
+		z-index 2
+		padding 15px 15px
+	&_back
+		position absolute
+		left: 180px;
+		top 20px
+		padding 15px 0
+		display flex
+		align-items: flex-end
+		flex-direction column
+	&__id
+		w(65px)
+		h(42px)
+		margin 0 9px 0 0
+		padding 0 0 0 12px
+	&__label
+		margin 0 0 10px
+		display block
+		c(#8494ab)
+	&__ids
+		margin 0 0 17px
+	&__time
+		h(42px)
+		padding 0 0 0 12px
+		margin 0 9px 0 0
+		border 1px solid #e4e9ee
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		text-indent: 1px;
+		text-overflow: '';
+		background: url('../img/card/arrow.png') no-repeat  90% center #fff
+		&::-ms-expand
+			display none
+		&:first-child
+			w(70px)
+		&:last-child
+			w(86px)
+	&__times
+		margin 0 0 12px
+	&__holder
+		h(42px)
+		padding 0 0 0 12px
+		w(100%)
+	&__stripe
+		w(100%)
+		h(42px)
+		b(#e4e9ee)
+		margin 0 0 19px
+	&__cvc
+		padding: 0 15px 0 0
+	&__code
+		w(138px)
+		h(42px)
+		padding 0 0 0 12px
+		background: url('../img/card/cvc.png') no-repeat  90% center #fff
+	&__required
+		margin 15px 0 0
+		c(red)
+/**********************card end*************************/
+
+/**********************btn start*************************/
+.btn
+	margin 35px 0 0
+	b(linear-gradient( lighten($green, 5%), darken($green, 5%)))
+	centerflex()
+	w(173px)
+	padding 12px 0
+	c(#fff)
+	radius(3px)
+	ff($font2)
+	fs(14px)
+	&:hover
+		b(linear-gradient( darken($green, 5%), darken($green, 20%)))
+	&:active
+		b(linear-gradient( darken($blue, 5%), darken($blue, 20%)))
+
+/**********************btn end*************************/
+/**********************card end*************************/
+/**********************content end*************************/
+
+
+/**********************right block end*************************/
+/**********************footer start*************************/
+.footer
+	padding: 30px 30px 25px
+	b(#373c43)
+	c(#7f8591)
+	
+	&__p
+		lh(18px)
+		fs(12px)
+		margin 0 0 8px
+/**********************footer end*************************/
+
+/**********************media queries start*************************/
+/**********************max-width: 959px start*************************/
+
+@media (max-width: 959px)
+	.content
+		padding 40px 30px 30px
+	.card
+		margin 0 0 15px
+	.btn
+		margin 20px auto 0
+
+/**********************max-width: 959px end*************************/
+
+/**********************max-width: 901px start*************************/
+@media (max-width: 901px)
+	.card
+		&__wrapper
+			flex-direction: column
+			align-items center
+		&_back
+			position: static
+	.content
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	.right
+		&__header
+			text-align: center
+
+/**********************max-width: 901px end*************************/
+/**********************max-width: 768px start*************************/
+@media (max-width: 768px)
+	.wrapper
+		display flex
+	.left
+		opacity: 0;
+		transition: all 0.5s;
+		position: absolute;
+		z-index: 3;
+		left: -322px;
+		&_open
+			display block
+			position: absolute;
+			opacity: 1;
+			left: 0;	
+	.hamburger
+		display block
+		opacity 1
+		padding 0
+		position fixed
+		right 15px
+		top 15px
+		z-index 4
+/**********************max-width: 768px end*************************/
+
+/**********************max-width: 370px start*************************/
+@media (max-width: 370px)
+	.left
+		w(100%)
+	.card
+		w(100%)
+		&__wrapper
+			w(100%)
+		&__id
+			w(20%)
+		&__field
+			padding 0 0 0 8px
+			fs(12px)
+	.hamburger.is-active
+		opacity 1
+		.hamburger
+			&:hover
+				opacity 1
+			&-inner
+				&:before, &:after
+					background-color: #fff
+
+/**********************max-width: 370px end*************************/
+
+/**********************media queries end*************************/

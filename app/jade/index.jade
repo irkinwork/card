@@ -1,0 +1,86 @@
+doctype html
+html(lang="ru")
+	head(lang="ru")
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		title Главная
+		link(rel="stylesheet", href="./css/libs.min.css")
+		link(rel="stylesheet", href="./css/bundle.min.css")
+	body
+		.wrapper
+			button.hamburger.hamburger--spring(type='button')
+				span.hamburger-box
+					span.hamburger-inner
+			//- left block start
+			.left
+				.logo
+					img.logo__img(src="./img/logo.png", alt="logo")
+				nav.menu
+					a.menu__item(href='javascript:void(0)') Первая ссылка
+					a.menu__item(href='javascript:void(0)') Вторая ссылка (активная)
+					a.menu__item(href='javascript:void(0)') Третья ссылка
+					a.menu__item(href='javascript:void(0)') Личный кабинет
+					a.menu__item(href='javascript:void(0)') Выйти
+			//- left block end
+			//- right block start
+			.right
+				header.right__header
+					h1 Заголовок страницы
+					h3 В отличие от пылевого и ионного хвостов, направление поступает в лимногляциальный часовой угол
+				//- content start
+				.content.right__content
+					p.content__p Информация по оплате:
+					.content__table
+						.content__tr
+							.content__td Номер счета:
+							.content__td 87123658716587
+						.content__tr
+							.content__td Сумма платежа:
+							.content__td 100 руб.
+					h2.content__h2 Данные банковской карты
+					//- card start
+					form.card__form
+						.card__wrapper
+							.card.card_front
+								.card__line
+									p.card__label Номер карты
+									.card__ids
+										input.card__id.card__field(type="number", name="card__id", required)
+										input.card__id.card__field(type="number", required)
+										input.card__id.card__field(type="number", required)
+										input.card__id.card__field(type="number", required)
+								.card__line
+									p.card__label Срок действия
+									.card__times
+										select.card__time.card__field(name="card__time")
+											- for (var i=1; i<=12; i++) {
+												- if (i<10) {
+													option.card__option= '0'+i
+												- } else {
+													option.card__option= i
+												-}
+											- }
+										select.card__time.card__field(name="card__time")
+											- for (var i=2018; i<=2028; i++) {
+													option= i
+											- }
+									.card__line
+										input.card__holder.card__field(type="text", required, placeholder="Держатель карты")
+							.card.card_back
+								.card__stripe
+								.card__cvc
+									p.card__label Код CVV2 / CVC2
+									input.card__code.card__field(name="card__code", type="number", required)
+						//-card end
+						button.btn Оплатить
+						p.card__required
+				//- content end
+				//- footer start
+				footer.footer
+					p.footer__p Исходя из астатической системы координат Булгакова, соединение стабильно. Краевая часть артезианского бассейна,которая в настоящее время находится ниже уровня моря, ослабляет систематический уход. Лисичка традиционно трансформирует прецессионный годовой параллакс.
+					p.footer__p Выклинивание абсолютно аккумулирует твердый pадиотелескоп Максвелла.
+					p.footer__p Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный объект.
+					p.footer__p Устойчивость, например, параллельна. Аргумент перигелия определяет боксит. Проекция вертикально дает уходящий диабаз. Если пренебречь малыми величинами, то видно, что угол крена покрывает вибрирующий волчок, что обусловлено не только первичными неровностями эрозионно-тектонического рельефа поверхности кристаллических пород, но и проявлениями долее поздней блоковой тектоники. Засветка неба заставляет иначе взглянуть на то, что такое волчок.
+			//- footer end
+			//- right block end
+		script(src="./js/bundle.min.js")
